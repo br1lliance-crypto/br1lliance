@@ -82,15 +82,14 @@ const Register = () => {
                 style={styles.input}
                 value={retryPassword}
                 label="Повторите пароль"
-                placeholder="Чтоб не забыть (^-^)"
+                placeholder="Повторите ваш пароль"
                 secureTextEntry={true}
                 onChangeText={(nextValue) => setRetryPassword(nextValue)}
             />
-            <Button style={styles.button} onPress={handleLogin} appearance="filled">Регистрация</Button>
-            
+
             <View style={styles.bottomBlock}>
+                <Button style={styles.button} onPress={handleLogin} appearance="filled">Регистрация</Button>
                 <Button style={styles.buttonReg} onPress={handleGoToLogin}><Text>Войти</Text></Button>
-                <Text style={styles.bottomBlockText}>Если уже есть аккаунт</Text>
             </View>
         </Layout>
     );
@@ -108,7 +107,7 @@ const styles = StyleSheet.create({
     title: {
         marginBottom: 24,
         textAlign: 'center',
-        color: '#f17d21'
+        color: '#f6f'
     },
     input: {
         marginBottom: 16,
@@ -117,22 +116,22 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 16,
         width: '100%',
-        backgroundColor: '#f17d21',
+        backgroundColor: '#3c2',
         borderWidth: 0,
-        color: '#3c2'
+        color: '#fff'
     },
 
     bottomBlock: {
         width: '100%',
-        position: 'absolute',
+        // position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
         gap: 10,
-        bottom: 0
+        // bottom: 0
     },
     buttonReg: {
         width: '100%',
-        backgroundColor: '#333',
+        backgroundColor: '#f6f',
         borderWidth: 0
     },
     bottomBlockText: {

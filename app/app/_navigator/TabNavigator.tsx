@@ -28,10 +28,10 @@ const TabNavigator = () => {
         component={ProductList} 
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, { color: focused ? '#f17d21' : 'black' }]}>Одежда</Text>
+            <Text style={[styles.tabLabel, { color: focused ? '#f6f' : 'black' }]}>Украшения</Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <MaterialCommunityIcons name='peace' size={28} color={focused ? '#f17d21' : 'black'} />
+            <MaterialCommunityIcons name='crown' size={28} color={focused ? '#f6f' : 'black'} />
           ),
         }} 
       />
@@ -41,25 +41,25 @@ const TabNavigator = () => {
         component={Cart}
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, { color: focused ? '#f17d21' : 'black' }]}>Корзина</Text>
+            <Text style={[styles.tabLabel, { color: focused ? '#f6f' : 'black' }]}>Корзина</Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <Feather name='shopping-cart' size={28} color={focused ? '#f17d21' : 'black'} />
+            <Feather name='shopping-cart' size={28} color={focused ? '#f6f' : 'black'} />
           ),
         }} 
       />
 
-      <Tab.Screen 
-        name="Profile" 
-        component={Home} 
+      <Tab.Screen
+        name="Profile"
+        component={Home}
         options={{
           tabBarLabel: ({ focused }) => (
-            <Text style={[styles.tabLabel, { color: focused ? '#f17d21' : 'black' }]}>Профиль</Text>
+            <Text style={[styles.tabLabel, { color: focused ? '#f6f' : 'black' }]}>Профиль</Text>
           ),
           tabBarIcon: ({ focused }) => (
-            <Feather name='user' size={28} color={focused ? '#f17d21' : 'black'} />
+            <Feather name='user' size={28} color={focused ? '#f6f' : 'black'} />
           ),
-        }} 
+        }}
       />
 
     </Tab.Navigator>

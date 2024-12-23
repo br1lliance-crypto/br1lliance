@@ -1,21 +1,38 @@
 import { Button, Layout, Text } from '@ui-kitten/components'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
+import { getUser } from '../apiController/getUser';
 
 const Home = () => {
   const { logout } = useAuth();
+  const { token } = useAuth();
+
+  const [user, setUser] = useState();
   const handleExit = () => {
     logout();
   }
+
+  useEffect(() => {
+    if (!token) return; 
+    getUser(token).then(res => {
+      setUser(res);
+    })
+  }, [])
+
   return (
     <Layout style={{flex: 1, padding: 20, gap: 20}}>
-      <Layout style={{flex: 1, backgroundColor: '#eee', borderRadius: 10, padding: 20}}>
-        <Text style={{fontWeight: 600, fontSize: 18}}>История заказов</Text>
-        <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'transparent'}}>
-          <Text>Заказов пока нет</Text>
-        </Layout>
+      <Layout style={{flex: 1, backgroundColor: '#0000', borderRadius: 10, padding: 20}}>
+        {user ? (
+            <>
+              <Text style={{fontWeight: 700, fontSize: 30, color: '#f6f'}}>{user.username}</Text>
+              <Text>Почта: {user.email}</Text>
+              <Text>Дата регистрации: {user.createdAt.split('T')[0]}</Text>
+            </>
+          )
+        : <Text>Не удалось загрузить пользователя</Text>
+        }
       </Layout>
-      <Button onPress={handleExit} style={{backgroundColor: '#f17d21', borderWidth: 0}}>Выйти из аккаунта</Button>
+      <Button onPress={handleExit} style={{backgroundColor: '#f6f', borderWidth: 0}}>Выйти из аккаунта</Button>
     </Layout>
   )
 }

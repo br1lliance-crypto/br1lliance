@@ -69,13 +69,12 @@ const Login = () => {
                 secureTextEntry={true}
                 onChangeText={(nextValue) => setPassword(nextValue)}
             />
+            
+            <View style={styles.bottomBlock}>
             <Button style={styles.button} onPress={handleLogin}>
                 Войти
             </Button>
-            
-            <View style={styles.bottomBlock}>
                 <Button style={styles.buttonReg} onPress={handleGoToRegister}>Зарегистрироваться</Button>
-                <Text style={styles.bottomBlockText}>Если ещё не зарегистрированы</Text>
             </View>
         </Layout>
     );
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
     title: {
         marginBottom: 24,
         textAlign: 'center',
-        color: '#f17d21'
+        color: '#f6f'
     },
     input: {
         marginBottom: 16,
@@ -102,20 +101,22 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 16,
         width: '100%',
-        backgroundColor: '#f17d21',
+        backgroundColor: '#3c2',
         borderWidth: 0
     },
 
     bottomBlock: {
         width: '100%',
-        position: 'absolute',
+        // position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
         gap: 10,
-        bottom: 0
+        // bottom: 0
     },
     buttonReg: {
-        width: '100%'
+        width: '100%',
+        backgroundColor: '#f6f',
+        borderWidth: 0
     },
     bottomBlockText: {
         color: '#0007'

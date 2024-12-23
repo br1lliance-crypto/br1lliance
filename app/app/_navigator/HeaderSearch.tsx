@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { Layout, Input } from '@ui-kitten/components'
-import { StyleSheet, ViewStyle, TextStyle, TouchableOpacity } from 'react-native'
+import { StyleSheet, ViewStyle, TextStyle, TouchableOpacity, Text } from 'react-native'
 import Feather from '@expo/vector-icons/Feather'
 
 interface HeaderProps {}
@@ -18,7 +18,7 @@ const HeaderSearch: React.FC<HeaderProps> = () => {
 
   const renderSearchIcon = useCallback(() => (
     <TouchableOpacity>
-      <Feather name='search' size={22} color="#f17d21" />
+      <Feather name='search' size={22} color="#f6f" />
     </TouchableOpacity>
   ), [onSearchSubmit])
 
@@ -30,14 +30,7 @@ const HeaderSearch: React.FC<HeaderProps> = () => {
 
   return (
     <Layout style={styles.header}>
-      <Input
-        style={styles.searchInput}
-        placeholder='Тут можно написать, что хотите найти'
-        value={searchQuery}
-        onChangeText={onSearchChange}
-        accessoryLeft={renderSearchIcon}
-        accessoryRight={goSeacrh}
-      />
+      <Text style={{color: '#f6f', fontSize: 18, fontWeight: 700}}>Ювелирные изделия</Text>
     </Layout>
   )
 }
@@ -45,7 +38,7 @@ const HeaderSearch: React.FC<HeaderProps> = () => {
 const styles = StyleSheet.create({
   header: {
     padding: 10,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#fff',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start', // Align left to avoid stretching

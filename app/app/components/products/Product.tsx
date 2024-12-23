@@ -49,7 +49,7 @@ const Product: React.FC<ProductProps> = ({ item }) => {
           style={styles.cartButton}
           onPress={() => handleAddToCart(item)} // Передаем весь объект товара
         >
-          <Feather name="shopping-cart" size={24} color="#f17d21" />
+          <Feather name="shopping-cart" size={24} color="#f6f" />
         </TouchableOpacity>
       </View>
     </Layout>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   price: {
     marginTop: 10,
     fontWeight: '700',
-    color: '#F17D21',
+    color: '#f6f',
     textAlign: 'left',
   },
   cartButton: {
